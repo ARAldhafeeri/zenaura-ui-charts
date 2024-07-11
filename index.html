@@ -1,0 +1,437 @@
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./public/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="title" content="zenaura" />
+    <meta http-equiv="refresh"  />
+    <meta
+      name="description"
+      content="this app created with zenaura"
+    />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="stylesheet" href="public/gigavolt.min.css">
+<link rel="stylesheet" href="public/output.css">
+<script src="public/highlight.min.js"></script>
+<script src="public/python.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+        <script>
+            const ws = new WebSocket("ws://localhost:5000/refresh");
+            ws.onmessage = () => {
+            console.log("Reloading...");
+            location.reload();
+            };
+        </script>
+        
+
+        <script>
+        window.addEventListener('message', (e) => {
+        let data = e.data
+        console.log("message", data)
+        if (data === 'light-theme') {
+            document.documentElement.classList.remove('dark');
+
+        } else {
+            document.documentElement.classList.add('dark');
+
+        }
+        })
+        </script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+ 
+	<script type="py" src="./public/main.py" config="./public/config.json"></script>
+
+    <link  rel="stylesheet" href="./public/main.css">
+
+    <title>zenaura</title>
+    
+  </head>
+  <body>
+    <div id="root">
+        <div data-zenaura="1925e75c" class="flex flex-col float-left space-y-2 w-1/5 h-screen p-2 overflow-y-scroll bg-light-white dark:bg-dark-gray1"><h1 data-zenaura="1925e75c00" class="mb-1 rounded-md px-2 py-1 text-md font-semibold text-light-gray1 dark:text-dark-page1">General Charts</h1><a data-zenaura="1925e75c01" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="bar">Bar</a><a data-zenaura="1925e75c02" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="line">Line</a><a data-zenaura="1925e75c03" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="bubble">Bubble</a><a data-zenaura="1925e75c04" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="dougnut">Dougnut</a><a data-zenaura="1925e75c05" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="pie">Pie</a><a data-zenaura="1925e75c06" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="area">Area</a><a data-zenaura="1925e75c07" class="px-3 py-2 text-sm text-light-gray1 hover:text-light-green dark:text-dark-page1 dark:hover:text-dark-gray2"href="javascript:;" py-click="side_nav_bar.set_active_comp"  name="scatter">Scatter</a></div><div data-zenaura="72e7e09f"><div data-zenaura="ab5bffe9" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="ab5bffe900" class=""><div data-zenaura="ab5bffe90010" class="flex flex-col py-7"><h1 data-zenaura="ab5bffe9001020" class=" text-light-gray1 dark:text-dark-page1">Bar</h1><p data-zenaura="ab5bffe9001021" class=" text-light-gray1 dark:text-dark-page1">Displays a bar chart from config</p><a data-zenaura="ab5bffe9001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="ab5bffe90011" class="bg-gray-100 font-sans"><div data-zenaura="ab5bffe9001120" class="p-8"><div data-zenaura="ab5bffe900112030" class=""><div data-zenaura="ab5bffe90011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="ab5bffe9001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="bar.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="ab5bffe9001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="bar.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="ab5bffe90011203041" class="mt-3"><div data-zenaura="ab5bffe9001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="ab5bffe900112030415060" id="barchart"></canvas></div><div data-zenaura="ab5bffe9001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="ab5bffe900112030415160" class="codeWrapper"><pre data-zenaura="ab5bffe90011203041516070"><code data-zenaura="ab5bffe9001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+labels = [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;]
+data = {
+    &quot;labels&quot;: labels,
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;backgroundColor&quot;: &quot;rgba(255, 99, 132, 0.2)&quot;,
+        &quot;borderColor&quot;: &quot;rgb(255, 99, 132)&quot;,
+        &quot;data&quot;: [65, 59, 80, 81, 56, 55, 40],
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;bar&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;barchart&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return  Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="8feec504"><div data-zenaura="dabda30b" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="dabda30b00" class=""><div data-zenaura="dabda30b0010" class="flex flex-col py-7"><h1 data-zenaura="dabda30b001020" class=" text-light-gray1 dark:text-dark-page1">Scatter</h1><p data-zenaura="dabda30b001021" class=" text-light-gray1 dark:text-dark-page1">Displays a scatter chart from config</p><a data-zenaura="dabda30b001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="dabda30b0011" class="bg-gray-100 font-sans"><div data-zenaura="dabda30b001120" class="p-8"><div data-zenaura="dabda30b00112030" class=""><div data-zenaura="dabda30b0011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="dabda30b001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="scatter.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="dabda30b001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="scatter.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="dabda30b0011203041" class="mt-3"><div data-zenaura="dabda30b001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="dabda30b00112030415060" id="scatterchart"></canvas></div><div data-zenaura="dabda30b001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="dabda30b00112030415160" class="codeWrapper"><pre data-zenaura="dabda30b0011203041516070"><code data-zenaura="dabda30b001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+labels = [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;]
+data = {
+    &quot;labels&quot;: labels,
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;backgroundColor&quot;: &quot;rgba(75, 192, 192, 0.2)&quot;,
+        &quot;borderColor&quot;: &quot;rgb(75, 192, 192)&quot;,
+        &quot;data&quot;: [65, 59, 80, 81, 56, 55, 40],
+        &quot;fill&quot;: True
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;line&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;scatter&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="00c70b96"><div data-zenaura="b712583f" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="b712583f00" class=""><div data-zenaura="b712583f0010" class="flex flex-col py-7"><h1 data-zenaura="b712583f001020" class=" text-light-gray1 dark:text-dark-page1">Area</h1><p data-zenaura="b712583f001021" class=" text-light-gray1 dark:text-dark-page1">Displays an area chart from config</p><a data-zenaura="b712583f001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="b712583f0011" class="bg-gray-100 font-sans"><div data-zenaura="b712583f001120" class="p-8"><div data-zenaura="b712583f00112030" class=""><div data-zenaura="b712583f0011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="b712583f001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="area.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="b712583f001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="area.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="b712583f0011203041" class="mt-3"><div data-zenaura="b712583f001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="b712583f00112030415060" id="areachart"></canvas></div><div data-zenaura="b712583f001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="b712583f00112030415160" class="codeWrapper"><pre data-zenaura="b712583f0011203041516070"><code data-zenaura="b712583f001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+labels = [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;]
+data = {
+    &quot;labels&quot;: labels,
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;backgroundColor&quot;: &quot;rgba(75, 192, 192, 0.2)&quot;,
+        &quot;borderColor&quot;: &quot;rgb(75, 192, 192)&quot;,
+        &quot;data&quot;: [65, 59, 80, 81, 56, 55, 40],
+        &quot;fill&quot;: True
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;line&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;area&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="022727c2"><div data-zenaura="1a346229" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="1a34622900" class=""><div data-zenaura="1a3462290010" class="flex flex-col py-7"><h1 data-zenaura="1a346229001020" class=" text-light-gray1 dark:text-dark-page1">Pie</h1><p data-zenaura="1a346229001021" class=" text-light-gray1 dark:text-dark-page1">Displays a pie chart from config</p><a data-zenaura="1a346229001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="1a3462290011" class="bg-gray-100 font-sans"><div data-zenaura="1a346229001120" class="p-8"><div data-zenaura="1a34622900112030" class=""><div data-zenaura="1a3462290011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="1a346229001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="pie.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="1a346229001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="pie.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="1a3462290011203041" class="mt-3"><div data-zenaura="1a346229001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="1a34622900112030415060" id="piechart"></canvas></div><div data-zenaura="1a346229001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="1a34622900112030415160" class="codeWrapper"><pre data-zenaura="1a3462290011203041516070"><code data-zenaura="1a346229001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+data = {
+    &quot;labels&quot;: [&quot;Red&quot;, &quot;Blue&quot;, &quot;Yellow&quot;, &quot;Green&quot;, &quot;Purple&quot;, &quot;Orange&quot;],
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;data&quot;: [300, 50, 100, 40, 120, 75],
+        &quot;backgroundColor&quot;: [
+            &quot;rgba(255, 99, 132, 0.2)&quot;,
+            &quot;rgba(54, 162, 235, 0.2)&quot;,
+            &quot;rgba(255, 206, 86, 0.2)&quot;,
+            &quot;rgba(75, 192, 192, 0.2)&quot;,
+            &quot;rgba(153, 102, 255, 0.2)&quot;,
+            &quot;rgba(255, 159, 64, 0.2)&quot;
+        ],
+        &quot;borderColor&quot;: [
+            &quot;rgba(255, 99, 132, 1)&quot;,
+            &quot;rgba(54, 162, 235, 1)&quot;,
+            &quot;rgba(255, 206, 86, 1)&quot;,
+            &quot;rgba(75, 192, 192, 1)&quot;,
+            &quot;rgba(153, 102, 255, 1)&quot;,
+            &quot;rgba(255, 159, 64, 1)&quot;
+        ],
+        &quot;borderWidth&quot;: 1
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;pie&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;pie&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="c4dedf5b"><div data-zenaura="477bdb90" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="477bdb9000" class=""><div data-zenaura="477bdb900010" class="flex flex-col py-7"><h1 data-zenaura="477bdb90001020" class=" text-light-gray1 dark:text-dark-page1">Doughnut</h1><p data-zenaura="477bdb90001021" class=" text-light-gray1 dark:text-dark-page1">Displays a doughnut chart from config</p><a data-zenaura="477bdb90001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="477bdb900011" class="bg-gray-100 font-sans"><div data-zenaura="477bdb90001120" class="p-8"><div data-zenaura="477bdb9000112030" class=""><div data-zenaura="477bdb900011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="477bdb90001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="doughnut.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="477bdb90001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="doughnut.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="477bdb900011203041" class="mt-3"><div data-zenaura="477bdb90001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="477bdb9000112030415060" id="doughnutchart"></canvas></div><div data-zenaura="477bdb90001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="477bdb9000112030415160" class="codeWrapper"><pre data-zenaura="477bdb900011203041516070"><code data-zenaura="477bdb90001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+data = {
+    &quot;labels&quot;: [&quot;Red&quot;, &quot;Blue&quot;, &quot;Yellow&quot;, &quot;Green&quot;, &quot;Purple&quot;, &quot;Orange&quot;],
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;data&quot;: [300, 50, 100, 40, 120, 75],
+        &quot;backgroundColor&quot;: [
+            &quot;rgba(255, 99, 132, 0.2)&quot;,
+            &quot;rgba(54, 162, 235, 0.2)&quot;,
+            &quot;rgba(255, 206, 86, 0.2)&quot;,
+            &quot;rgba(75, 192, 192, 0.2)&quot;,
+            &quot;rgba(153, 102, 255, 0.2)&quot;,
+            &quot;rgba(255, 159, 64, 0.2)&quot;
+        ],
+        &quot;borderColor&quot;: [
+            &quot;rgba(255, 99, 132, 1)&quot;,
+            &quot;rgba(54, 162, 235, 1)&quot;,
+            &quot;rgba(255, 206, 86, 1)&quot;,
+            &quot;rgba(75, 192, 192, 1)&quot;,
+            &quot;rgba(153, 102, 255, 1)&quot;,
+            &quot;rgba(255, 159, 64, 1)&quot;
+        ],
+        &quot;borderWidth&quot;: 1
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;doughnut&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;dougnut&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="94009e61"><div data-zenaura="77418742" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="7741874200" class=""><div data-zenaura="774187420010" class="flex flex-col py-7"><h1 data-zenaura="77418742001020" class=" text-light-gray1 dark:text-dark-page1">Bubble</h1><p data-zenaura="77418742001021" class=" text-light-gray1 dark:text-dark-page1">Displays a bubble chart from config</p><a data-zenaura="77418742001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="774187420011" class="bg-gray-100 font-sans"><div data-zenaura="77418742001120" class="p-8"><div data-zenaura="7741874200112030" class=""><div data-zenaura="774187420011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="77418742001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="bubble.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="77418742001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="bubble.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="774187420011203041" class="mt-3"><div data-zenaura="77418742001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="7741874200112030415060" id="bubblechart"></canvas></div><div data-zenaura="77418742001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="7741874200112030415160" class="codeWrapper"><pre data-zenaura="774187420011203041516070"><code data-zenaura="77418742001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+data = {
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;backgroundColor&quot;: &quot;rgba(255, 99, 132, 0.2)&quot;,
+        &quot;borderColor&quot;: &quot;rgb(255, 99, 132)&quot;,
+        &quot;data&quot;: [
+            {&quot;x&quot;: 20, &quot;y&quot;: 30, &quot;r&quot;: 15},
+            {&quot;x&quot;: 40, &quot;y&quot;: 10, &quot;r&quot;: 10},
+            {&quot;x&quot;: 15, &quot;y&quot;: 20, &quot;r&quot;: 25},
+            {&quot;x&quot;: 35, &quot;y&quot;: 40, &quot;r&quot;: 30},
+            {&quot;x&quot;: 50, &quot;y&quot;: 50, &quot;r&quot;: 20}
+        ],
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;bubble&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;bubble_chart&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div><div hidden data-zenaura="b32e668d"><div data-zenaura="a87f4c6d" class="min-h-screen  p-4 relative bg-light-white dark:bg-dark-gray1 mx-auto flex flex-col gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20 "><div data-zenaura="a87f4c6d00" class=""><div data-zenaura="a87f4c6d0010" class="flex flex-col py-7"><h1 data-zenaura="a87f4c6d001020" class=" text-light-gray1 dark:text-dark-page1">Line</h1><p data-zenaura="a87f4c6d001021" class=" text-light-gray1 dark:text-dark-page1">Displays a line chart from config</p><a data-zenaura="a87f4c6d001022" class="
+inline-flex items-center justify-center 
+whitespace-nowrap text-sm font-medium 
+transition-colors focus-visible:outline-none 
+focus-visible:ring-1 focus-visible:ring-ring 
+disabled:pointer-events-none disabled:opacity-50 
+text-primary-foreground shadow 
+h-9 px-4 py-2 rounded-[6px]
+m-1 bg-light-gray1 text-light-white
+hover:bg-light-green
+dark:text-dark-page1
+dark:bg-dark-black
+dark:hover:bg-dark-gray2
+w-40"href="https://araldhafeeri.github.io/Zenaura/api/ui/badge/"  target="_blank">Menu API Refrence</a></div><div data-zenaura="a87f4c6d0011" class="bg-gray-100 font-sans"><div data-zenaura="a87f4c6d001120" class="p-8"><div data-zenaura="a87f4c6d00112030" class=""><div data-zenaura="a87f4c6d0011203040" class="flex  border-b-2 border-light-green dark:border-dark-black"><button data-zenaura="a87f4c6d001120304050" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1 me-2 inline-block p-5 border-b-2 border-light-green border-spacing-2 dark:border-dark-page1"py-click="line.toggle_tabs" name="1"  py-click="None">Preview</button><button data-zenaura="a87f4c6d001120304051" class="px-4 py-2 transition-all duration-300 text-light-gray1 dark:text-dark-page1"py-click="line.toggle_tabs" name="2"  py-click="None">Code</button></div><div data-zenaura="a87f4c6d0011203041" class="mt-3"><div data-zenaura="a87f4c6d001120304150" class="block transition-all duration-300 p-4"><canvas data-zenaura="a87f4c6d00112030415060" id="linechart"></canvas></div><div data-zenaura="a87f4c6d001120304151" class="hidden transition-all duration-300 p-4"><div data-zenaura="a87f4c6d00112030415160" class="codeWrapper"><pre data-zenaura="a87f4c6d0011203041516070"><code data-zenaura="a87f4c6d001120304151607080" class="language-python">
+from zenaura.client.mutator import mutator
+from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.client.component import Component
+
+# Data for the chart
+labels = [&quot;January&quot;, &quot;February&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;, &quot;July&quot;]
+data = {
+    &quot;labels&quot;: labels,
+    &quot;datasets&quot;: [{
+        &quot;label&quot;: &quot;My First Dataset&quot;,
+        &quot;backgroundColor&quot;: &quot;rgba(75, 192, 192, 0.2)&quot;,
+        &quot;borderColor&quot;: &quot;rgb(75, 192, 192)&quot;,
+        &quot;data&quot;: [65, 59, 80, 81, 56, 55, 40],
+    }]
+}
+
+# Configuration options
+config = {
+    &quot;type&quot;: &quot;line&quot;,
+    &quot;data&quot;: data,
+    &quot;options&quot;: {}
+}
+
+class Chart(Component):
+  def __init__(self):
+    self.chart_name = &quot;linechart&quot;
+
+  @mutator
+  async def attached(self):
+    ChartThis(config, self.chart_name)
+
+    
+  def render(self):
+    return Canvas(self.chart_name)
+
+</code></pre></div></div></div></div></div></div></div></div></div>
+    </div>
+  
+  </body>
+
+</html>
