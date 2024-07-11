@@ -1,0 +1,46 @@
+{
+    "type": "app",
+    "schema_version": 1,
+    "runtimes": [],
+    "interpreters": [
+      {
+        "src": "https://cdn.jsdelivr.net/pyodide/dev/full/",
+        "name": "pyodide-0.22.1",
+        "lang": "python"
+      }
+    ],
+    "packages": [
+      "zenaura==0.11.125"
+    ],
+    "fetch": [
+      {
+        "files": [
+          "./public/routes.py",
+          "./public/data.py",
+          "./public/constants.py",
+          "./public/styles.py",
+          "./public/main.py",
+          "./public/utils.py",
+
+          "./public/components/common.py",
+          "./public/components/sidebar.py",
+          "./public/components/bar_chart.py",
+          "./public/components/line_chart.py",
+          "./public/components/bubble_chart.py",
+          "./public/components/dougnut.py",
+          "./public/components/pie.py",
+          "./public/components/area.py",
+          "./public/components/scatter.py"
+
+
+
+
+        ]
+      }
+    ],
+    "plugins": [],
+    "pyscript": {
+      "version": "2022.12.1.dev",
+      "time": "2024-04-29T20:57:07.199Z"
+    }
+  }
