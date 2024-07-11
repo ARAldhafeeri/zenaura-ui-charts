@@ -1,6 +1,6 @@
 bar_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
@@ -38,7 +38,7 @@ class Chart(Component):
 
 line_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
@@ -76,7 +76,7 @@ class Chart(Component):
 
 bubble_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
@@ -119,7 +119,7 @@ class Chart(Component):
 
 doughnut_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
@@ -171,7 +171,7 @@ class Chart(Component):
 
 pie_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
@@ -223,7 +223,7 @@ class Chart(Component):
 
 area_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
@@ -261,7 +261,7 @@ class Chart(Component):
 
 scatter_chart_code = """
 from zenaura.client.mutator import mutator
-from zenaura.graph.charts import ChartThis, Canvas
+from zenaura.ui.charts import ChartThis, Canvas
 from zenaura.client.component import Component
 
 # Data for the chart
